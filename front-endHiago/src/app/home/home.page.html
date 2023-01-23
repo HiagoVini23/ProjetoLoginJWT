@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Autenticação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Login</ion-label>
+      <ion-input [(ngModel)]="login" placeholder="Informe o Login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Senha</ion-label>
+      <ion-input [(ngModel)]="senha" type="password" placeholder="Informe a Senha"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="loga()">Login</ion-button>
+</ion-content>

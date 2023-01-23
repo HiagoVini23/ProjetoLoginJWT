@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Cadastro de Usuários </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input type="text" [(ngModel)]="login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" (click)="adicionar()">Adicionar</ion-button> 
+
+    <ion-grid *ngIf="pessoas.length > 0">
+      <ion-row>
+        <ion-col> <strong>Login</strong> </ion-col>
+        <ion-col> <strong>Senha</strong> </ion-col>
+        <ion-col> 
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of pessoas;">
+        <ion-col> {{ item.login }} </ion-col>
+        <ion-col> {{ item.senha }} </ion-col>
+        <ion-col> 
+          <ion-icon name="trash" (click)="confirmarExclusao(item.id)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <ion-button (click)="logout()">Logout</ion-button>
+  </div>
+</ion-content>
